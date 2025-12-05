@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的简历 - AI简历助手</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-title">AI简历助手</div>
+            <div class="navbar-user">
+                <span id="userInfo"></span>
+                <button id="logoutBtn" class="btn btn-secondary">退出登录</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="page-title">我的简历</h1>
+
+        <!-- 上传区域 -->
+        <div class="card">
+            <h2 style="margin-bottom: 20px; color: #333;">上传新简历</h2>
+            <div id="uploadArea" class="file-upload-area">
+                <div class="upload-icon">📄</div>
+                <p style="font-size: 18px; color: #667eea; margin-bottom: 10px; font-weight: 500;">
+                    点击或拖拽PDF文件到这里
+                </p>
+                <p style="color: #999; font-size: 14px;">支持PDF格式，最大16MB</p>
+                <input type="file" id="fileInput" class="file-input" accept=".pdf">
+            </div>
+            <div id="uploading" class="hidden"></div>
+            <div id="uploadErrorMessage" class="hidden"></div>
+            <div id="uploadSuccessMessage" class="hidden"></div>
+        </div>
+
+        <!-- 简历列表 -->
+        <div class="card">
+            <h2 style="margin-bottom: 20px; color: #333;">简历列表</h2>
+            <div id="loading" class="loading">加载中...</div>
+            <div id="errorMessage" class="hidden"></div>
+            <div id="resumeList" class="resume-list"></div>
+        </div>
+    </div>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简历详情 - AI简历助手</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-title">AI简历助手</div>
+            <div class="navbar-user">
+                <span id="userInfo"></span>
+                <button id="logoutBtn" class="btn btn-secondary">退出登录</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <a href="/dashboard.html" class="btn btn-secondary" style="margin-bottom: 20px;">← 返回</a>
+
+        <div id="content">
+            <div id="loading" class="loading">加载中...</div>
+            <div id="errorMessage" class="hidden"></div>
+
+            <!-- 简历信息 -->
+            <div class="card">
+                <h2 style="margin-bottom: 20px; color: #333;">简历信息</h2>
+                <div id="resumeInfo"></div>
+            </div>
+
+            <!-- 简历分析 -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 style="color: #333;">简历分析</h2>
+                    <button id="analyzeBtn" class="btn btn-primary">开始分析</button>
+                </div>
+                <div id="analysisResult"></div>
+            </div>
+
+            <!-- 面试题目生成 -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;">
+                    <h2 style="color: #333;">面试题目</h2>
+                    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                        <input type="number" id="numQuestions" min="1" max="50" value="10" 
+                            style="width: 80px; padding: 8px; border: 2px solid #e0e0e0; border-radius: 6px;">
+                        <span style="color: #666;">道题目</span>
+                        <button id="generateBtn" class="btn btn-success">生成题目</button>
+                    </div>
+                </div>
+                <div id="generating" class="hidden"></div>
+                <div id="questionsList"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/resume.js"></script>
+</body>
+</html>
+

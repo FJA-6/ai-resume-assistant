@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 - AI简历助手</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="card auth-card">
+            <h1>注册</h1>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="regUsername">用户名</label>
+                    <input type="text" id="regUsername" name="username" required placeholder="请输入用户名">
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">邮箱</label>
+                    <input type="email" id="regEmail" name="email" required placeholder="请输入邮箱">
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">密码</label>
+                    <input type="password" id="regPassword" name="password" required placeholder="请输入密码（至少6位）">
+                </div>
+                <div class="form-group">
+                    <label for="regConfirmPassword">确认密码</label>
+                    <input type="password" id="regConfirmPassword" name="confirmPassword" required placeholder="请再次输入密码">
+                </div>
+                <div id="registerErrorMessage" class="hidden"></div>
+                <div id="registerSuccessMessage" class="hidden"></div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">注册</button>
+            </form>
+            <div class="auth-link">
+                <span>已有账号？</span>
+                <a href="/login.html">立即登录</a>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+</body>
+</html>
+

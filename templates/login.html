@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - AI简历助手</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="card auth-card">
+            <h1>登录</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">用户名或邮箱</label>
+                    <input type="text" id="username" name="username" required placeholder="请输入用户名或邮箱">
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" name="password" required placeholder="请输入密码">
+                </div>
+                <div id="errorMessage" class="hidden"></div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">登录</button>
+            </form>
+            <div class="auth-link">
+                <span>还没有账号？</span>
+                <a href="/register.html">立即注册</a>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/auth.js"></script>
+</body>
+</html>
+
