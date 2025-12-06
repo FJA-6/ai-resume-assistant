@@ -220,6 +220,46 @@ body {
     line-height: 1.6;
 }
 
+.answer-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+}
+
+.btn-toggle-answer {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.btn-toggle-answer:hover {
+    background: #764ba2;
+}
+
+.answer-content {
+    margin-top: 15px;
+    padding: 15px;
+    background: #e8f5e9;
+    border-radius: 8px;
+    border-left: 4px solid #4caf50;
+}
+
+.answer-content strong {
+    color: #2e7d32;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.answer-text {
+    color: #333;
+    line-height: 1.8;
+}
+
 .analysis-result {
     background: #f8f9fa;
     padding: 20px;

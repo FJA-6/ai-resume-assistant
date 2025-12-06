@@ -194,6 +194,7 @@ def generate_questions_endpoint(resume_id):
             question = InterviewQuestion(
                 resume_id=resume_id,
                 question=q['question'],
+                answer=q.get('answer', '暂无参考答案'),
                 category=q.get('category', '其他')
             )
             db.session.add(question)

@@ -99,6 +99,17 @@ document.addEventListener('DOMContentLoaded', async function() {
                     <span class="category">${escapeHtml(q.category || '其他')}</span>
                     <h4>题目 ${index + 1}</h4>
                     <div class="question-text">${escapeHtml(q.question)}</div>
+                    ${q.answer ? `
+                        <div class="answer-section">
+                            <button class="btn-toggle-answer" onclick="toggleAnswer(${index})">
+                                显示答案
+                            </button>
+                            <div class="answer-content" id="answer-${index}" style="display: none;">
+                                <strong>参考答案：</strong>
+                                <div class="answer-text">${escapeHtml(q.answer).replace(/\n/g, '<br>')}</div>
+                            </div>
+                        </div>
+                    ` : ''}
                 </div>
             `).join('');
         } else {
@@ -169,6 +180,20 @@ document.addEventListener('DOMContentLoaded', async function() {
     displayAnalysis();
     displayQuestions();
 });
+
+// 切换答案显示/隐藏
+function toggleAnswer(index) {
+    const answerDiv = document.getElementById(`answer-${index}`);
+    const btn = answerDiv.previousElementSibling;
+    
+    if (answerDiv.style.display === 'none') {
+        answerDiv.style.display = 'block';
+        btn.textContent = '隐藏答案';
+    } else {
+        answerDiv.style.display = 'none';
+        btn.textContent = '显示答案';
+    }
+}
 
 // HTML转义函数
 function escapeHtml(text) {

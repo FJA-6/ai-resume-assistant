@@ -69,6 +69,7 @@ class InterviewQuestion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     resume_id = db.Column(db.Integer, db.ForeignKey('resumes.id'), nullable=False)
     question = db.Column(db.Text, nullable=False)
+    answer = db.Column(db.Text, nullable=True)  # 参考答案
     category = db.Column(db.String(100), nullable=True)  # 题目类别，如：技术、项目经验、基础知识等
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     
@@ -78,6 +79,7 @@ class InterviewQuestion(db.Model):
             'id': self.id,
             'resume_id': self.resume_id,
             'question': self.question,
+            'answer': self.answer,
             'category': self.category,
             'created_at': self.created_at.isoformat()
         }
